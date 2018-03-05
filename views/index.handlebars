@@ -1,0 +1,78 @@
+<div class="container">
+<div class="jumbotron">
+<div class="page-header">
+<h1>It's burger time!!!</h1>
+</div>
+
+
+<div class="row" >
+
+  <div class="col-md-6 col-md-offset-1">
+    <img src="../images/burger.jpg" style="width:604px;" class="img-circle">
+<h5>Buger Devour-er</h5>
+</div>
+
+</div>
+
+<div class="row" >
+  <div class="col-md-6"  >
+    <h3>Burgers waiting to be eaten!</h3>
+    <ul class="list-group">
+      {{#each burgers}}
+        {{#unless this.devoured}}
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-md-6">
+            {{this.burger_name}}
+              </div>
+<div class="col-md-6">
+            <form action="/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="devoured" value="true">
+              <button type="submit" class="btn btn-success btn-xs">EAT THAT BURGER!</button>
+            </form>
+  </div>
+  </div>
+          </li>
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+
+
+  <div class="col-md-6">
+    <h3>Burgers that have been devoured!</h3>
+    <ulclass="list-group">
+      {{#each burgers}}
+        {{#if this.devoured}}
+          <li class="list-group-item">
+            {{this.burger_name}}
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+<h3>Make a New Burger!</h3>
+<form class="create-update-form" action="/" method="POST">
+
+
+  <div class="input-group">
+       <input type="text" name="burger_name" class="form-control" placeholder="Name me something delicious...">
+       <span class="input-group-btn">
+         <button class="btn btn-success" type="submit">Add Burger!</button>
+       </span>
+     </div>
+
+
+
+</form>
+
+</div>
+</div>
+  </div>
+  </div>
