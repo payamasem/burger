@@ -1,7 +1,7 @@
-CREATE DATABASE burgers_db;
-USE burgers_db;
+CREATE DATABASE g0a71irsd2jlnh7;
+USE g0a71irsd2jlnh7;
 
-CREATE TABLE `burgers_db`.`burgers` (
+CREATE TABLE `g0a71irsd2jlnh7`.`burgers` (
 `id` INT NOT NULL AUTO_INCREMENT,
 `burger_name` VARCHAR(255) NULL,
 `devoured` INT NULL,
